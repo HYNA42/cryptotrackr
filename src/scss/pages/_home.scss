@@ -1,0 +1,75 @@
+@use "../abstracts/all" as abstracts;
+
+.accueil {
+  &--left {
+    // @include abstracts.color(noir, background-color);
+    @media screen and (max-width: 768px) {
+      margin-bottom: abstracts.$padding-form;
+    }
+
+    h1 {
+      @include abstracts.color(gris);
+    }
+    p {
+      @include abstracts.color(bleu-gris-fonce);
+    }
+    span {
+      @include abstracts.color(gris);
+      font-style: italic;
+    }
+
+    .line {
+      height: 2px;
+      width: 0;
+      @include abstracts.color(bleu-gris-fonce, background-color);
+      transition: width 0.5s ease-in-out;
+      margin: 0.5rem 0;
+    }
+    p:hover + .line {
+      width: 100%;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .signature {
+      background: linear-gradient(270deg, #1554f0, #475460, #84a4bc, #7c7c84);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 5s ease infinite;
+    }
+  }
+
+  &--right {
+    @include abstracts.color(blanc, background-color);
+    border-radius: abstracts.$border-radius;
+
+    @media screen and (max-width: 768px) {
+      max-width: 514px;
+      margin: 0 auto;
+      padding: 2 * abstracts.$padding-form;
+    }
+  }
+}
+
+// Ajouter une règle pour centrer le bloc de gauche lorsque l'utilisateur est connecté
+.logged-in {
+  display: flex;
+  justify-content: center;
+
+  &--left {
+    flex: 0 0 100%;
+    max-width: 600px; // Ajustez cette valeur selon vos besoins
+    margin: 0 auto;
+  }
+}

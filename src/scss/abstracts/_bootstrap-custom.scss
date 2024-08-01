@@ -1,0 +1,39 @@
+//Variables et overrides de Bootstrap
+// Variable overrides first
+@use "./all" as abstracts;
+
+$danger: map-get(abstracts.$colors, noir);
+$light: map-get(abstracts.$colors, blanc);
+$info: map-get(abstracts.$colors, gris);
+$success: map-get(abstracts.$colors, bleu-vif);
+$warning: map-get(abstracts.$colors, bleu-clair);
+$primary: map-get(abstracts.$colors, bleu-marine-fonce);
+$dark: map-get(abstracts.$colors, bleu-gris-fonce);
+$secondary: map-get(abstracts.$colors, bleu-grisatre);
+
+//variable polices sans-serif et police de base
+$font-family-sans-serif: abstracts.$font-family-primary;
+$font-family-base: $font-family-sans-serif;
+
+///////pagination
+$pagination-color: $dark;
+$pagination-bg: $light;
+$pagination-border-color: $dark;
+// $pagination-hover-color: $dark;
+$pagination-hover-bg: $dark;
+$pagination-hover-border-color: $dark;
+$pagination-active-color: $light;
+$pagination-active-bg: $dark;
+$pagination-active-border-color: $dark;
+
+// couleur de la courbe
+:root {
+  --chart-line-color: #475460;
+}
+
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Then import Bootstrap
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,123 @@
+@use "../abstracts/all" as abstracts;
+.crypto-lists-market {
+  min-height: calc(
+    100vh - 151px
+  ); //(73px + 78px) = 151px vieport - header - footer
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+//table
+.table {
+  flex-grow: 1;
+  padding: 0 0.5rem;
+  th,
+  tr {
+    vertical-align: middle;
+  }
+
+  thead {
+    tr {
+      th {
+        @include abstracts.color(bleu-gris-fonce);
+        @include abstracts.color(bleu-grisatre, background-color);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @include abstracts.color(blanc, background-color);
+      }
+    }
+  }
+
+  //////////////////////////////////////////
+
+  th,
+  td {
+    @media (max-width: 600px) {
+      font-size: 0.75rem;
+    }
+  }
+  td {
+    a {
+      text-decoration: none;
+    }
+  }
+  .crypto-rank,
+  .crypto-name,
+  .crypto-price {
+    //   @include abstracts.color(blanc);
+    @include abstracts.color(bleu-gris-fonce);
+  }
+  .crypto-evol {
+    &.positive {
+      color: abstracts.$vert;
+    }
+    &.negative {
+      color: abstracts.$rouge;
+    }
+  }
+  .crypto-symbol {
+    @include abstracts.color(gris);
+  }
+  /*couleur */
+  ////////////////////////////////////////////////
+
+  //tbody
+  .crypto-rank {
+    //   @include abstracts.color(noir);
+    font-weight: bold;
+  }
+  .crypto-info {
+    display: flex;
+    align-items: center;
+  }
+  .crypto-logo {
+    width: abstracts.$width-and-height-crypto-logo;
+    height: abstracts.$width-and-height-crypto-logo;
+    margin-right: 0.5rem;
+  }
+  .crypto-name {
+    font-weight: bold;
+    margin-right: 0.3rem;
+    //   @include abstracts.color(noir);
+  }
+
+  .crypto-graph {
+    .content-graph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    canvas {
+      width: abstracts.$width-canvas-chart;
+      height: auto;
+    }
+  }
+
+  //bouton favoris
+  .btn-favorite {
+    border: none;
+    background-color: transparent;
+    @include abstracts.color(bleu-girs-fonce);
+    font-size: 1.5em;
+  }
+
+  .btn-favorite.active .bi-star-fill {
+    @include abstracts.color(bleu-gris-fonce);
+  }
+  .btn-favorite .bi-star {
+    @include abstracts.color(gris);
+  }
+}
+
+//paginaton
+nav.paginationList {
+  margin-top: auto;
+}

@@ -1,0 +1,10 @@
+@use "../abstracts/all" as abstracts;
+
+.body {
+  @include abstracts.color(bleu-grisatre, background-color);
+
+  main {
+    padding-top: abstracts.$paddingTop-default-main;
+  }
+
+}

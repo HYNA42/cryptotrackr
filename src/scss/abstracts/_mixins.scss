@@ -1,0 +1,86 @@
+@use "./variables" as abstracts;
+
+@mixin color($color, $property: null) {
+  @if $property != null {
+    #{$property}: map-get(abstracts.$colors, $color);
+  } @else {
+    color: map-get(abstracts.$colors, $color);
+  }
+}
+
+@mixin common-properties($type) {
+  @if $type == navbar-brand {
+    display: flex;
+    // color: abstracts.$color-nav;
+    @include color(bleu-gris-fonce);
+    font-size: abstracts.$font-size-header-title;
+
+    @include responsive-font-size-small(
+      abstracts.$font-size-header-title-small
+    );
+
+    font-weight: abstracts.$font-weight-bold;
+    @include transitions(color, 0.5s, ease);
+
+    &:hover {
+      // color: abstracts.$color-darken;
+      @include color(bleu-marine-fonce);
+    }
+  } @else if $type == nav-link {
+    display: inline-block;
+    // color: abstracts.$color-nav;
+    @include color(bleu-gris-fonce);
+    font-size: abstracts.$font-size-header-link;
+    @include responsive-font-size-small(abstracts.$font-size-header-link-small);
+    font-weight: abstracts.$font-weight-medium;
+
+    @include transitions(color, 0.5s, ease, border-bottom-color, 0.5s, ease);
+
+    &:hover {
+      // color: abstracts.$color-darken;
+      // color: red;
+      @include color(bleu-marine-fonce);
+    }
+  }
+}
+
+@mixin border-bottom-transition($color) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0.1875rem; //3px
+    background-color: $color;
+    // @include color(bleu-marine-fonce,background-color);
+
+    @include transitions(width, 0.3s, ease, left, 0.3s, ease);
+  }
+  &:hover::before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@mixin transitions(
+  $property1,
+  $duration1,
+  $timing1: ease,
+  $property2: null,
+  $duration2: null,
+  $timing2: ease
+) {
+  @if $property2 != null and $duration2 != null {
+    transition: $property1 $duration1 $timing1, $property2 $duration2 $timing2;
+  } @else {
+    transition: $property1 $duration1 $timing1;
+  }
+}
+
+@mixin responsive-font-size-small($font-size-small) {
+  @media (max-width: 615px) {
+    font-size: $font-size-small;
+  }
+}

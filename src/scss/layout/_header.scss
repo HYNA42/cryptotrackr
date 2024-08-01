@@ -1,0 +1,5 @@
+@use "../abstracts/all" as abstracts;
+header {
+  @include abstracts.color(blanc, background-color);
+
+}

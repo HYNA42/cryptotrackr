@@ -1,0 +1,83 @@
+@use "../abstracts/all" as abstracts;
+
+.profil {
+  &-userInfos {
+    padding: abstracts.$padding-form;
+    //infors utilisateur
+    @include abstracts.color(blanc, background-color);
+    border-radius: abstracts.$border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .photo {
+      margin: 0 auto;
+      img {
+        max-width: 4 * abstracts.$padding-form;
+        @media (max-width: 768px) {
+          max-width: 3 * abstracts.$padding-form;
+        }
+        height: auto;
+        margin-bottom: abstracts.$padding-form;
+        border-radius: 50%;
+      }
+    }
+
+    button[data-bs-toggle="collapse"] {
+      margin-bottom: abstracts.$padding-form;
+    }
+
+    .table_fields {
+      th,
+      td {
+        @include abstracts.color(blanc);
+      }
+
+
+      @media (min-width: 870px) {
+        th,
+        td {
+          width: 10 * abstracts.$padding-form;
+        }
+      }
+
+      @media (max-width: 768px) {
+        th,
+        td {
+          display: block;
+          width: 15.125 * abstracts.$padding-form;
+        }
+        .table {
+          display: flex;
+        }
+      }
+
+      th {
+        @include abstracts.color(bleu-vif, background-color);
+      }
+      td {
+        @include abstracts.color(bleu-gris-fonce, background-color);
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          @include abstracts.color(bleu-vif, background-color);
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: abstracts.$gap-buttons;
+    }
+  }
+
+  //favoris
+  &-userFavorites {
+    h1{
+      text-align: center;
+      @include abstracts.color(bleu-girs-fonce, color);
+    }
+   
+  }
+}

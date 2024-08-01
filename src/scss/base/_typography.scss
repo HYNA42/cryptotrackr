@@ -1,0 +1,15 @@
+@use "../abstracts/all" as abstracts;
+html {
+  font-size: 100%; // (1rem = 16px)
+}
+
+body {
+  font-family: abstracts.$font-family-primary;
+  font-size: abstracts.$font-size-base;
+  font-weight: abstracts.$font-weight-normal;
+  @include abstracts.color(noir);
+
+  @include abstracts.responsive-font-size-small(
+    abstracts.$font-size-base-small
+  );
+}

@@ -1,0 +1,119 @@
+@use "../abstracts/all" as abstracts;
+
+.cryptoDetails {
+  font-size: abstracts.$font-size-header-title;
+
+  .crypto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .crypto-infos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+
+      .crypto-infos-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Pour gérer le dépassement sur les petits écrans */
+
+        span {
+          margin-left: 0.5rem;
+        }
+
+        .crypto-logo {
+          width: calc(1.6 * abstracts.$width-and-height-crypto-logo);
+          height: calc(1.6 * abstracts.$width-and-height-crypto-logo);
+        }
+
+        .crypto-name {
+          font-weight: abstracts.$font-weight-bold;
+        }
+
+        .crypto-symbol,
+        .crypto-rank {
+          @include abstracts.color(gris);
+        }
+
+        .btn-favorite {
+          border: none;
+          outline: none;
+          background-color: none;
+
+          .bi {
+            @include abstracts.color(bleu-marine-fonce); // étoile vide
+          }
+        }
+      }
+
+      .crypto-infos-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 992px) {
+          justify-content: flex-start;
+        }
+
+        .crypto-price {
+          font-weight: abstracts.$font-weight-bold;
+        }
+
+        .crypto-evol {
+          margin-left: 0.5rem;
+          font-weight: calc(0.5 * abstracts.$font-weight-bold);
+          font-size: 14px;
+
+          &.positive {
+            color: abstracts.$vert;
+          }
+
+          &.negative {
+            color: abstracts.$rouge;
+          }
+        }
+      }
+    }
+
+    .crypto-infos-buttons {
+      display: flex;
+      justify-content: center;
+      // margin: 1rem 0;
+
+      @media (min-width: 992px) {
+        justify-content: flex-start;
+        margin-bottom: 0;
+      }
+
+      .btn {
+        margin: 0 0.5rem;
+
+        @media (min-width: 992px) {
+          margin: 0;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .tradingView {
+    margin-top: 2rem;
+    #tradingViewCollapse {
+      margin: 2rem 0;
+    }
+  }
+}

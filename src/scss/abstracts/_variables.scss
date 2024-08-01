@@ -1,0 +1,68 @@
+//spacing
+$margin-nav-li: 3.125rem; //50px
+$margin-nav-logo: 1.25rem;
+$width-nav-logo: 3.125rem;
+$padding: 0;
+$width-and-height-crypto-logo: 1.5rem;
+// $height-canvas-chart: 3rem;
+$width-canvas-chart: 5rem;
+
+$padding-footer: 0.5rem;
+$padding-footer-items-y: 0.25rem;
+$padding-footer-items-x: 0.5rem;
+$margin-footer-socials-x: 3rem;
+$width-footer-socials-logo: 2rem;
+$width-footer-socials-logo-margin-x: 2rem;
+
+$paddingTop-default-main: 4.375rem;
+
+$padding-form: 1rem;
+$margin-form-label: 0.5rem;
+$margin-form-control: 1rem;
+
+$border-radius: 0.375rem;
+
+$gap-buttons: 1rem;
+
+//colors hors charte graphique choisi arbitrairement
+$rouge: #fa1010;
+$vert: #1abf16;
+//charte graphique couleur
+$colors: (
+  noir: #000000,
+  blanc: #ffffff,
+  gris: #7c7c84,
+  bleu-vif: #1554f0,
+  bleu-clair: #99b0f3,
+  bleu-marine-fonce: #07297c,
+  bleu-gris-fonce: #475460,
+  bleu-grisatre: #84a4bc,
+);
+
+$primary: map-get($colors, bleu-marine-fonce);
+$danger: map-get($colors, girs);
+$chartLineColor: map-get($colors, bleu-gris-fonce);
+
+//font-family
+$font-family-primary: "Noto Sans", sans-serif;
+
+//font-size
+$font-size-base: 1rem; //police de base = 16px
+$font-size-base-small: 0.9375rem; //police de base = 16px
+$font-size-responsive: 0.875rem; //police de base = 14px pour les écran < 552px
+
+$font-size-header-title: 1.5rem; //24px
+$font-size-header-title-small: 1.25rem; //20px
+$font-size-header-link: 1rem;
+$font-size-header-link-small: 0.9375rem;
+
+//font-weight
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+
+//layout
+$layout-lg: 62rem; //992px;
+
+//other variables
+$opacity-value: 80%;

@@ -1,0 +1,25 @@
+@use "base/reset";
+@use "base/typography";
+
+// @use "abstracts/media-queries";
+@use "layout/media-queries";
+@use "layout/header";
+@use "layout/body";
+@use "layout/footer";
+// @use "abstracts/fonts";
+
+@use "components/navbar";
+@use "components/button";
+@use "components/form";
+@use "components/offcanvas";
+@use "components/crypto";
+
+//pages
+@use "pages/home";
+@use "pages/signup";
+@use "pages/password-reset";
+@use "pages/profil";
+@use "pages/market";
+@use "pages/tradingView";
+
+@use "abstracts/bootstrap-custom";

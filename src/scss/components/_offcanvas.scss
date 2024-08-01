@@ -1,0 +1,6 @@
+@use "../abstracts/all" as abstracts;
+
+.offcanvas {
+  @include abstracts.color(blanc, background-color);
+
+}

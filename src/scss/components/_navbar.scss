@@ -1,0 +1,54 @@
+@use "../abstracts/all" as abstracts;
+
+header {
+  nav {
+    &.border-body {
+      border-bottom-color: map-get(abstracts.$colors, blanc) !important;
+      @include abstracts.color(bleu-vif, border-bottom-color);
+    }
+
+    .navbar-brand {
+      @include abstracts.common-properties(navbar-brand);
+      align-items: center;
+
+      img {
+        margin-right: abstracts.$margin-nav-logo;
+        width: abstracts.$width-nav-logo;
+        height: auto;
+        @include abstracts.transitions(opacity, 0.3s, ease);
+        &:hover {
+          opacity: abstracts.$opacity-value;
+        }
+      }
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+      .nav-item {
+        margin-left: abstracts.$margin-nav-li;
+        .nav-link {
+          @include abstracts.common-properties(nav-link);
+          @include abstracts.border-bottom-transition(
+            map-get(abstracts.$colors, bleu-marine-fonce)
+          );
+
+          padding-left: abstracts.$padding;
+          padding-right: abstracts.$padding;
+          border-bottom: 0.1875rem solid transparent;
+          padding-bottom: 0;
+        }
+        .active {
+          @include abstracts.color(bleu-marine-fonce);
+        }
+      }
+    }
+    
+    .custom-toggler {
+      border: 1px solid transparent;
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 0 0.25rem #07297c;
+      }
+    }
+  }
+}

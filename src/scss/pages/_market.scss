@@ -1,0 +1,5 @@
+@use "../abstracts/all" as abstracts;
+.title {
+  @include abstracts.color(bleu-gris-fonce);
+  text-align: center;
+}

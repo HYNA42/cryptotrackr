@@ -1,0 +1,56 @@
+@use "../abstracts/all" as abstracts;
+
+.btn-primary {
+  @include abstracts.color(blanc);
+  font-family: abstracts.$font-family-primary;
+
+  @include abstracts.responsive-font-size-small(
+    abstracts.$font-size-base-small
+  );
+  &:hover,
+  &:focus {
+    background-color: darken(abstracts.$primary, 5%);
+    border-color: darken(abstracts.$primary, 5%);
+  }
+}
+
+.btn-danger {
+  @include abstracts.color(blanc);
+  font-family: abstracts.$font-family-primary;
+
+  @include abstracts.responsive-font-size-small(
+    abstracts.$font-size-base-small
+  );
+  &:hover,
+  &:focus {
+    background-color: abstracts.$danger;
+    border-color: abstracts.$danger;
+    color: map-get(abstracts.$colors, blanc);
+  }
+}
+
+.btn-favorite {
+  border: none;
+  // outline: none;
+  // background: none;
+
+  @include abstracts.color(bleu-marine-fonce); 
+
+  .bi {
+    @include abstracts.color(bleu-marine-fonce);
+    // font-size: 1.5rem;
+
+    &.filled {
+      @include abstracts.color(bleu-marine-fonce);
+    }
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.active {
+    @include abstracts.color(bleu-marine-fonce);
+  }
+
+}
